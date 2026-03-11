@@ -1,0 +1,37 @@
+int winMax(vector<int>& arr, int l, int r){
+    int max = arr[l];
+    for(int i=l+1; i<=r; i++){
+        if(arr[i]>max) max = arr[i];
+    }
+    return max;
+}
+
+class Solution {
+  public:
+    vector<int> maxOfSubarrays(vector<int>& arr, int k) {
+        
+        vector<int> ans;
+        
+        int n = arr.size();
+        
+        int max = arr[0];
+        
+        for(int i=1; i<k; i++){
+            if(arr[i]>max) max = arr[i];
+        }
+        
+        ans.push_back(max);
+        
+        int l=1;
+        for(int r=k; r<n; r++){
+            if(arr[l-1] == max) max = winMax(arr,l,r);
+            if(arr[r]>max) max = arr[r];
+            ans.push_back(max);
+            l++;
+        }
+        
+        return ans;
+        
+    }
+};
+
