@@ -1,0 +1,6 @@
+{
+  "name": "Linkly - Linked List Visualizer",
+  "description": "An interactive, step-by-step visualizer for singly linked list operations including insertion, deletion, search, and sorting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
