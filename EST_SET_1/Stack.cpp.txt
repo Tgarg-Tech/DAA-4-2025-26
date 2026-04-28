@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node* next;
+    
+    Node* push(int data, Node* head){
+        Node* newNode = new Node();
+        newNode->data = data;
+        newNode->next = nullptr;
+        if(!head){
+            head = newNode;
+        }
+        else{
+            newNode->next = head;
+            head = newNode;
+        }
+        return head;
+    }
+    
+    Node* pop(Node* head){
+        if(!head) return nullptr;
+        cout << head->data << endl;
+        return head->next;
+    }
+    
+    int peek (Node* head){
+        return head->data;
+    }
+    
+};
+int main() {
+    
+    Node obj;
+   
+    Node* head = obj.push(10,nullptr);
+    head = obj.push(9,head);
+    head = obj.push(8,head);
+    head = obj.pop(head);
+    int data = obj.peek(head);
+    cout << data << endl;
+
+    return 0;
+}
